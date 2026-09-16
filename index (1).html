@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="ProElite Construction provides professional interior and exterior painting and flooring installation services."
+  />
+  <title>ProElite Construction | Painting & Flooring</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --navy: #142a3a;
+      --navy-dark: #0d1d29;
+      --gold: #d5a54d;
+      --gold-light: #f3e2bc;
+      --cream: #faf8f3;
+      --white: #ffffff;
+      --text: #263640;
+      --muted: #6f7d84;
+      --line: #e7e2d9;
+      --shadow: 0 18px 45px rgba(17, 40, 55, 0.13);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--text);
+      background: var(--cream);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy-dark);
+      color: #eaf0f1;
+      font-size: 0.88rem;
+    }
+
+    .topbar .container {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 25px;
+    }
+
+    .topbar a:hover {
+      color: var(--gold);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid rgba(20, 42, 58, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--navy);
+      font-size: 1.18rem;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      border: 2px solid var(--gold);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .logo span small {
+      display: block;
+      margin-top: -4px;
+      color: var(--gold);
+      font-size: 0.6rem;
+      letter-spacing: 2.3px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      color: var(--navy);
+      font-size: 0.91rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      transition: 0.25s ease;
+    }
+
+    .button-gold {
+      color: var(--navy-dark);
+      background: var(--gold);
+    }
+
+    .button-gold:hover {
+      background: #e2b661;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.72);
+      background: transparent;
+    }
+
+    .button-outline:hover {
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      align-items: center;
+      position: relative;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(11, 27, 38, 0.91) 0%, rgba(11, 27, 38, 0.72) 47%, rgba(11, 27, 38, 0.18) 100%),
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85")
+          center/cover;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 85px 0;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--gold-light);
+      font-size: 0.79rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 38px;
+      height: 2px;
+      background: var(--gold);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    h1 {
+      max-width: 700px;
+      margin-bottom: 22px;
+      color: var(--white);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      letter-spacing: -1.6px;
+    }
+
+    .hero p {
+      max-width: 590px;
+      margin-bottom: 32px;
+      color: #e4ebed;
+      font-size: 1.1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .trust-bar {
+      background: var(--gold);
+      color: var(--navy-dark);
+    }
+
+    .trust-bar .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item {
+      padding: 20px 28px;
+      border-right: 1px solid rgba(20, 42, 58, 0.18);
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      margin-bottom: 12px;
+      color: #af7c20;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      max-width: 620px;
+      margin-bottom: 18px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.15rem, 3.5vw, 3.25rem);
+      letter-spacing: -0.8px;
+    }
+
+    .section-intro {
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .about-image-wrap {
+      position: relative;
+      padding: 0 28px 28px 0;
+    }
+
+    .about-image-wrap::after {
+      position: absolute;
+      z-index: 0;
+      right: 0;
+      bottom: 0;
+      width: 72%;
+      height: 74%;
+      background: var(--gold);
+      content: "";
+    }
+
+    .about-image {
+      position: relative;
+      z-index: 1;
+      height: 500px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-copy p {
+      margin: 18px 0 25px;
+      color: var(--muted);
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      list-style: none;
+    }
+
+    .check-list li {
+      color: var(--navy);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .check-list li::before {
+      display: inline-grid;
+      width: 19px;
+      height: 19px;
+      place-items: center;
+      margin-right: 9px;
+      color: var(--navy);
+      background: var(--gold);
+      content: "✓";
+      font-size: 0.75rem;
+      font-weight: 900;
+    }
+
+    .services {
+      background: var(--white);
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      overflow: hidden;
+      background: var(--cream);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-7px);
+    }
+
+    .service-card img {
+      height: 255px;
+    }
+
+    .service-card-content {
+      padding: 25px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.55rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .projects {
+      background: var(--navy);
+    }
+
+    .projects .section-label {
+      color: var(--gold);
+    }
+
+    .projects .section-heading {
+      color: var(--white);
+    }
+
+    .projects .section-intro {
+      color: #bdc9ce;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      grid-template-rows: 250px 250px;
+      gap: 18px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project:first-child {
+      grid-row: span 2;
+    }
+
+    .project img {
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.06);
+    }
+
+    .project-label {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 45px 20px 18px;
+      color: var(--white);
+      background: linear-gradient(transparent, rgba(7, 20, 29, 0.89));
+      font-weight: 700;
+    }
+
+    .project-label small {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 45px;
+    }
+
+    .process-step {
+      min-height: 225px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .process-step:first-child {
+      padding-left: 0;
+    }
+
+    .process-step:last-child {
+      border: 0;
+    }
+
+    .step-number {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+    }
+
+    .process-step h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .cta {
+      padding: 82px 0;
+      color: var(--white);
+      background:
+        linear-gradient(rgba(12, 30, 42, 0.9), rgba(12, 30, 42, 0.9)),
+        url("https://images.unsplash.com/photo-1562259949-a4a260b53d7b?auto=format&fit=crop&w=1800&q=80")
+          center/cover;
+    }
+
+    .cta .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .cta h2 {
+      max-width: 630px;
+      color: var(--white);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+    }
+
+    footer {
+      padding: 65px 0 25px;
+      color: #d8e0e3;
+      background: var(--navy-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 55px;
+      padding-bottom: 50px;
+    }
+
+    footer .logo {
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .footer-description {
+      max-width: 350px;
+      color: #aebcc2;
+      font-size: 0.93rem;
+    }
+
+    footer h3 {
+      margin-bottom: 17px;
+      color: var(--gold);
+      font-size: 0.83rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 10px;
+      color: #c6d0d4;
+      font-size: 0.93rem;
+    }
+
+    footer li a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #8d9ca3;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-image {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar .container {
+        justify-content: center;
+        gap: 14px;
+        font-size: 0.75rem;
+      }
+
+      nav {
+        height: 70px;
+      }
+
+      nav .button {
+        padding: 11px 14px;
+        font-size: 0.78rem;
+      }
+
+      .hero {
+        min-height: 590px;
+      }
+
+      .trust-bar .container,
+      .service-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        padding: 13px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(20, 42, 58, 0.18);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-top,
+      .cta .container,
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .service-grid {
+        gap: 18px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 250px);
+      }
+
+      .project:first-child {
+        grid-row: auto;
+      }
+
+      .process-step,
+      .process-step:first-child {
+        min-height: auto;
+        padding: 24px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .process-step:last-child {
+        border-bottom: 0;
+      }
+
+      .check-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <a href="tel:+12538446617">Call: (253) 844-6617</a>
+      <a href="mailto:elisejbogatyj95@gmail.com">elisejbogatyj95@gmail.com</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home" aria-label="ProElite Construction home">
+          <span class="logo-mark">P</span>
+          <span>
+            ProElite Construction
+            <small>PAINTING & FLOORING</small>
+          </span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Our Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <a class="button button-gold" href="tel:+12538446617">Free Estimate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Quality You Can See</div>
+          <h1>Beautiful finishes for the spaces you love.</h1>
+          <p>
+            ProElite Construction brings fresh color, flawless flooring, and
+            professional craftsmanship to homes and businesses. Let us transform
+            your space with care and attention to every detail.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-gold" href="tel:+12538446617">Call for a Free Estimate</a>
+            <a class="button button-outline" href="#services">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-item">Professional Craftsmanship</div>
+        <div class="trust-item">Clean, Detail-Focused Work</div>
+        <div class="trust-item">Free Estimates Available</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image-wrap">
+            <img
+              class="about-image"
+              src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1000&q=85"
+              alt="Beautifully finished modern home interior"
+            />
+          </div>
+
+          <div class="about-copy">
+            <div class="section-label">About ProElite Construction</div>
+            <h2 class="section-heading">Built on quality, care, and beautiful results.</h2>
+            <p>
+              Hi, I’m Elisei, the owner of ProElite Construction. I provide
+              dependable painting and flooring services with a commitment to
+              clean work, honest communication, and results you’ll be proud of.
+            </p>
+            <p>
+              Whether you are updating one room or refreshing your entire
+              property, every project receives the same professional attention.
+            </p>
+            <ul class="check-list">
+              <li>Interior painting</li>
+              <li>Exterior painting</li>
+              <li>Floor installation</li>
+              <li>Floor replacement</li>
+              <li>Residential projects</li>
+              <li>Commercial projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-top">
+          <div>
+            <div class="section-label">What We Do</div>
+            <h2 class="section-heading">Painting and flooring done the right way.</h2>
+          </div>
+          <p class="section-intro">
+            Quality materials, careful preparation, and a finish designed to
+            make your property look its best.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1562259949-a4a260b53d7b?auto=format&fit=crop&w=900&q=85"
+              alt="Interior painting service"
+            />
+            <div class="service-card-content">
+              <h3>Interior Painting</h3>
+              <p>
+                Refresh your home with smooth, clean, beautiful paint finishes
+                for walls, ceilings, trim, doors, and more.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85"
+              alt="Exterior home painting service"
+            />
+            <div class="service-card-content">
+              <h3>Exterior Painting</h3>
+              <p>
+                Give your property a strong first impression with durable
+                exterior painting that helps protect and enhance your home.
+              </p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=85"
+              alt="Wood floor installation in a living room"
+            />
+            <div class="service-card-content">
+              <h3>Flooring Installation</h3>
+              <p>
+                Professional installation for beautiful floors, including LVP,
+                laminate, hardwood, vinyl, and other flooring options.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-label">Our Work</div>
+        <h2 class="section-heading">Spaces made fresh, polished, and inviting.</h2>
+        <p class="section-intro">
+          Your home deserves work that looks great and lasts. Contact ProElite
+          Construction to discuss your next painting or flooring project.
+        </p>
+
+        <div class="project-grid" style="margin-top: 42px;">
+          <div class="project">
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+              alt="Modern living room with finished flooring"
+            />
+            <div class="project-label">
+              <small>Flooring</small>
+              Modern Home Flooring
+            </div>
+          </div>
+
+          <div class="project">
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85"
+              alt="Freshly painted living room"
+            />
+            <div class="project-label">
+              <small>Painting</small>
+              Interior Refresh
+            </div>
+          </div>
+
+          <div class="project">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85"
+              alt="Beautiful house exterior"
+            />
+            <div class="project-label">
+              <small>Painting</small>
+              Exterior Finish
+            </div>
+          </div>
+
+          <div class="project">
+            <img
+              src="https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?auto=format&fit=crop&w=800&q=85"
+              alt="Light modern room with flooring"
+            />
+            <div class="project-label">
+              <small>Flooring</small>
+              Clean Modern Design
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-label">Our Process</div>
+        <h2 class="section-heading">Simple service from the first call to the final detail.</h2>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <span class="step-number">01</span>
+            <h3>Talk About Your Project</h3>
+            <p>
+              Call or email us to tell us what you need and schedule your free estimate.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-number">02</span>
+            <h3>Get a Clear Plan</h3>
+            <p>
+              We discuss your project, materials, colors, flooring options, and next steps.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-number">03</span>
+            <h3>Enjoy the Results</h3>
+            <p>
+              We complete your project with care so you can enjoy a fresh, finished space.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div>
+          <div class="eyebrow">Let’s Get Started</div>
+          <h2>Ready to transform your home or business?</h2>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-gold" href="tel:+12538446617">Call (253) 844-6617</a>
+          <a class="button button-outline" href="mailto:elisejbogatyj95@gmail.com">Email Elisei</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="#home">
+            <span class="logo-mark">P</span>
+            <span>
+              ProElite Construction
+              <small>PAINTING & FLOORING</small>
+            </span>
+          </a>
+          <p class="footer-description">
+            Professional painting and flooring services with quality workmanship
+            and attention to detail.
+          </p>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+          <ul>
+            <li>Interior Painting</li>
+            <li>Exterior Painting</li>
+            <li>Floor Installation</li>
+            <li>Floor Replacement</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:+12538446617">(253) 844-6617</a></li>
+            <li><a href="mailto:elisejbogatyj95@gmail.com">elisejbogatyj95@gmail.com</a></li>
+            <li>Free estimates available</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 ProElite Construction. All rights reserved.</span>
+        <span>Painting & Flooring Services</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
